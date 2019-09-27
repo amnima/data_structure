@@ -8,11 +8,11 @@ def compute_height(n, parents):
         nodes.append(i)
     height = 0
     for child_index in range(n-1):
-        height += 1
         parent_index = parents[child_index]
         if parent_index == -1:
             root = child_index
         else:
+            height += 1
             nodes.append(child_index)
     return height
 
