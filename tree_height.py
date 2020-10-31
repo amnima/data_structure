@@ -1,20 +1,20 @@
-# python3
-
 import sys
 import threading
 
 
 def compute_height(n, parents):
-    # Replace this code with a faster implementation
-    max_height = 0
-    for vertex in range(n):
-        height = 0
-        current = vertex
-        while current != -1:
+    nodes = []
+    for i in range(n):
+        nodes.append(i)
+    height = 0
+    for child_index in range(n-1):
+        parent_index = parents[child_index]
+        if parent_index == -1:
+            root = child_index
+        else:
             height += 1
-            current = parents[current]
-        max_height = max(max_height, height)
-    return max_height
+            nodes.append(child_index)
+    return height
 
 
 def main():
