@@ -5,13 +5,13 @@
 
 #define STACK_LENGTH 5
 #define EMPTY (-1)
-#define STACK_LENGTH INT_MIN
+#define STACK_EMPTY INT_MIN
 
 int mystack[STACK_LENGTH];
 int top = EMPTY;
 
 
-bool push(itn value){
+bool push(int value){
     if(top >= STACK_LENGTH-1) return false;
 
     top++;
@@ -29,7 +29,7 @@ int pop(){
 }
 
 
-int mainP(){
+int main(){
     push(56);
     push(3);
     push(36);
@@ -37,7 +37,7 @@ int mainP(){
 
     int t;
 
-    while ((t = pop()) != STACK_EMPTY){}
+    while ((t = pop()) != STACK_EMPTY){
        printf("t = %d\n", t);
-}
+    }
 }
